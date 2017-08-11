@@ -1,0 +1,80 @@
+body {
+    background-color: #1A181B;
+    color: #797979;
+}
+
+.google-map {
+    width: 30%;
+    height: 200px;
+    background-image: url("https://paulund.co.uk/app/uploads/2012/01/google-map.jpg");
+}
+
+.btn-custom {
+    background-color: #E06D06;
+    font-weight: bolder;
+}
+
+.form-control {
+    margin: 15px;
+}
+
+.details {
+    height: 100px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #736F4E;
+    text-decoration: none;
+}
+
+li {
+    float: left;
+    text-decoration: none;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: white;
+}
+
+.active {
+    background-color: #E06D06;
+    text-decoration: none;
+}
+
+.vbutton {
+    float:none;
+    display:inline-block;
+    vertical-align:middle;
+    margin-top:25px;
+}
+
+.col-custom {
+    display: inline-block;
+}
+
+.custom-font {
+    font-size: 30px;
+    text-align: center;
+}
+
+#sport-title {
+    font-family: 'Permanent Marker', cursive;
+}
+
+#address {
+    font-family: 'Saira Extra Condensed', sans-serif;
+    margin: 0;
+}
+
