@@ -2,7 +2,7 @@ import axios from "axios";
 
 export function getStatePosts(str) {
     return (dispatch) => {
-        return axios.get(`http://localhost:8080/activities?locationstate=${str}`).then((response) => {
+        return axios.get(`/activities?locationstate=${str}`).then((response) => {
             dispatch(setStatePosts(response.data.data))
         }).catch((error) => {
             throw error;
@@ -12,7 +12,7 @@ export function getStatePosts(str) {
 
 export function loadMarkers() {
     return (dispatch) => {
-        return axios.get("http://localhost:8080/activities").then((response) => {
+        return axios.get("/activities").then((response) => {
             dispatch(setMarkers(response.data.data));
         }).catch((err) => {
             throw err;
@@ -22,7 +22,7 @@ export function loadMarkers() {
 
 export function deleteMarker(data) {
     return (dispatch) => {
-        return axios.delete(`http://localhost:8080/activities/${data._id}`).then((response) => {
+        return axios.delete(`/activities/${data._id}`).then((response) => {
             dispatch(loadMarkers());
             dispatch(setCurrent(data));
         }).catch((err) => {
@@ -33,7 +33,7 @@ export function deleteMarker(data) {
 
 export function loadData() {
     return (dispatch) => {
-        return axios.get("http://localhost:8080/activities").then((response) => {
+        return axios.get("/activities").then((response) => {
             dispatch(setData(response.data.data));
         }).catch((error) => {
             throw error;
@@ -43,7 +43,7 @@ export function loadData() {
 
 export function addData(data) {
     return (dispatch) => {
-        return axios.post("http://localhost:8080/activities", data).then((response) => {
+        return axios.post("/activities", data).then((response) => {
             dispatch(loadData());
         }).catch((error) => {
             throw error;
@@ -53,7 +53,7 @@ export function addData(data) {
 
 export function deleteData(id) {
     return (dispatch) => {
-        return axios.delete(`http://localhost:8080/activities/${id}`).then((response) => {
+        return axios.delete(`/activities/${id}`).then((response) => {
             dispatch(loadData());
         }).catch((error) => {
             throw error;
@@ -63,7 +63,7 @@ export function deleteData(id) {
 
 export function updateData(id, data) {
     return (dispatch) => {
-        return axios.put(`http://localhost:8080/activities/${id}`, data).then((response) => {
+        return axios.put(`/activities/${id}`, data).then((response) => {
             dispatch(loadData());
         }).catch((error) => {
             throw error;
@@ -73,7 +73,7 @@ export function updateData(id, data) {
 
 export function upVoteData(id) {
     return (dispatch) => {
-        return axios.put(`http://localhost:8080/activities/upvotes/${id}`).then((response) => {
+        return axios.put(`/activities/upvotes/${id}`).then((response) => {
             dispatch(loadData());
         }).catch((error) => {
             throw error;
@@ -83,7 +83,7 @@ export function upVoteData(id) {
 
 export function downVoteData(id) {
     return (dispatch) => {
-        return axios.put(`http://localhost:8080/activities/downvotes/${id}`).then((response) => {
+        return axios.put(`/activities/downvotes/${id}`).then((response) => {
             dispatch(loadData());
         }).catch((error) => {
             throw error;
@@ -106,7 +106,7 @@ export function addMarker(input) {
             label: input.label,
             details: input.details
         };
-        return axios.post("http://localhost:8080/activities", data).then((response) => {
+        return axios.post("/activities", data).then((response) => {
             dispatch(loadMarkers());
         }).catch((err) => {
             throw err;
