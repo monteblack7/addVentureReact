@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import {Route, BrowserRouter, Switch} from "react-router-dom";
+import {Route, HashRouter, Switch} from "react-router-dom";
 
 import ActivityFindListContainer from "./containers/activity-find-list-container";
 import "./index.css";
@@ -19,7 +19,7 @@ class App extends React.Component {
     render() {
         return (
             <div>
-                <BrowserRouter>
+                <HashRouter>
                     <div>
                         <Navbar/>
                         <Switch>
@@ -28,7 +28,7 @@ class App extends React.Component {
                             <Route exact path = "/about" component={About}/>
                         </Switch>
                     </div>
-                </BrowserRouter>
+                </HashRouter>
             </div>
         )
     }
